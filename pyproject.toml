@@ -1,0 +1,12 @@
+[project]
+name = "hexlet-code"
+version = "0.1.0"
+description = ""
+authors = [{ name = "telnor" }]
+dependencies = []
+
+[project.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
+
+[tool.uv]
+package = true

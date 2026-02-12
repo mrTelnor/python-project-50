@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/gendiff/__init__.py
+src/gendiff/scripts/__init__.py
+src/gendiff/scripts/gendiff.py
+src/python_project_50.egg-info/PKG-INFO
+src/python_project_50.egg-info/SOURCES.txt
+src/python_project_50.egg-info/dependency_links.txt
+src/python_project_50.egg-info/top_level.txt
