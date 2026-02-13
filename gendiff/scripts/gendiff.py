@@ -1,4 +1,10 @@
 import argparse
+import json
+
+
+def read_file(path):
+    with open(path) as file:
+        return json.load(file)
 
 
 def main():
@@ -13,10 +19,17 @@ def main():
     parser.add_argument(
         '-f', '--format',
         default='stylish',
+        choices=['stylish', 'plain', 'json'],
         help='set format of output'
     )
 
-    parser.parse_args()
+    args = parser.parse_args()
+
+    data1 = read_file(args.first_file)
+    data2 = read_file(args.second_file)
+
+    print(data1)
+    print(data2)
 
 
 if __name__ == '__main__':

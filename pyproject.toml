@@ -2,7 +2,10 @@
 name = "hexlet-code"
 version = "0.1.0"
 description = ""
-authors = [{ name = "telnor" }]
+authors = [
+    { name = "Nikita Volkov", email = "mrtelnor@gmail.com" }
+]
+requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
