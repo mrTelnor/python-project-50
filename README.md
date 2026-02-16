@@ -2,18 +2,22 @@
 [![Actions Status](https://github.com/mrTelnor/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mrTelnor/python-project-50/actions)
 
 ### Test Coverage
-[![Coverage Status](https://sonarcloud.io/api/project_badges/measure?project=hexlet-boilerplates_python-package&metric=coverage)](https://sonarcloud.io/summary/new_code?id=hexlet-boilerplates_python-package)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mrTelnor_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=mrTelnor_python-project-50)
 
 ---
 
 # gendiff
 
-**gendiff** — CLI-утилита и Python-библиотека для сравнения двух JSON-файлов.  
+**gendiff** — CLI-утилита и Python-библиотека для сравнения двух JSON и YAML файлов.  
 Показывает различия между конфигурационными файлами в удобном формате.
 
 Проект выполнен в рамках обучения на Hexlet.
 
 ---
+
+## Demo
+
+[![asciicast](https://asciinema.org/a/ujZRDoTObLKZLRDF.svg)](https://asciinema.org/a/ujZRDoTObLKZLRDF)
 
 ## Возможности
 
