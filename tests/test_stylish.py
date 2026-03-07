@@ -7,40 +7,40 @@ def get_path(filename):
     return Path(__file__).parent / "test_data" / filename
 
 
-def test_generate_diff_json():
+def test_stylish_json():
     file1 = get_path("file1.json")
     file2 = get_path("file2.json")
-    expected = get_path("expected.txt").read_text()
+    expected = get_path("expected_stylish.txt").read_text()
 
     result = generate_diff(file1, file2)
 
     assert result == expected
 
 
-def test_generate_diff_yaml():
+def test_stylish_yaml():
     file1 = get_path("file1.yml")
     file2 = get_path("file2.yml")
-    expected = get_path("expected.txt").read_text()
+    expected = get_path("expected_stylish.txt").read_text()
 
     result = generate_diff(file1, file2)
 
     assert result == expected
 
 
-def test_generate_diff_nested_json():
+def test_stylish_nested_json():
     file1 = get_path("file1_nested.json")
     file2 = get_path("file2_nested.json")
-    expected = get_path("expected_nested.txt").read_text()
+    expected = get_path("expected_nested_stylish.txt").read_text()
 
     result = generate_diff(file1, file2)
 
     assert result == expected
 
 
-def test_generate_diff_nested_yaml():
+def test_stylish_nested_yaml():
     file1 = get_path("file1_nested.yml")
     file2 = get_path("file2_nested.yml")
-    expected = get_path("expected_nested.txt").read_text()
+    expected = get_path("expected_nested_stylish.txt").read_text()
 
     result = generate_diff(file1, file2)
 

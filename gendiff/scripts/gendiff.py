@@ -1,6 +1,12 @@
 import argparse
+from importlib.metadata import PackageNotFoundError, version
 
 from gendiff import generate_diff
+
+try:
+    VERSION = version("gendiff")
+except PackageNotFoundError:
+    VERSION = "unknown"
 
 
 def main():
@@ -17,6 +23,13 @@ def main():
         default='stylish',
         choices=['stylish', 'plain', 'json'],
         help='set format of output'
+    )
+    
+    parser.add_argument(
+        '-v', '--version',
+        action='version',
+        version=f'%(prog)s {VERSION}',
+        help='show program version'
     )
 
     args = parser.parse_args()
