@@ -1,6 +1,6 @@
 [project]
 name = "gendiff"
-version = "0.9.1"
+version = "1.0.0"
 description = ""
 authors = [
     { name = "Nikita Volkov", email = "mrtelnor@gmail.com" }
