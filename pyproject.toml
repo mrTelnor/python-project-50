@@ -1,6 +1,6 @@
 [project]
-name = "gendiff"
-version = "1.0.0"
+name = "hexlet-code"
+version = "1.0.1"
 description = ""
 authors = [
     { name = "Nikita Volkov", email = "mrtelnor@gmail.com" }
