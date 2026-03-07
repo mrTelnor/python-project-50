@@ -21,6 +21,8 @@
 
 [![asciicast](https://asciinema.org/a/5a4pgApoYFIsjEcI.svg)](https://asciinema.org/a/5a4pgApoYFIsjEcI)
 
+[![asciicast](https://asciinema.org/a/Gx7QjUwCPr1b0v1U.svg)](https://asciinema.org/a/Gx7QjUwCPr1b0v1U)
+
 ---
 
 ## Возможности
@@ -33,6 +35,7 @@
   - добавленных ключей (`+`)
   - изменённых значений
   - неизменённых значений
+  - выбор формата вывода, включая новый plain.
 - Использование как **CLI-утилиты** и как **Python-библиотеки**
 - Функциональный подход (без классов)
 
@@ -44,3 +47,7 @@
 
 ```bash
 uv tool install .
+
+## Установка
+
+Использование: gendiff [-h] [-f {stylish,plain,json}] first_file second_file
