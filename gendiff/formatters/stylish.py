@@ -20,6 +20,7 @@ def stringify(value, depth):
 
     return "\n".join(lines)
 
+
 def format_stylish(diff, depth=1):
     lines = ["{"]
 
