@@ -33,6 +33,6 @@ def format_plain(diff, path=""):
             )
 
         elif status == "nested":
-            lines.extend(format_plain(node["children"], new_path))
+            lines.extend(format_plain(node["children"], new_path).split("\n"))
 
     return "\n".join(lines)
