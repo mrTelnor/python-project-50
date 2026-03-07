@@ -25,3 +25,23 @@ def test_generate_diff_yaml():
     result = generate_diff(file1, file2)
 
     assert result == expected
+
+
+def test_generate_diff_nested_json():
+    file1 = get_path("file1_nested.json")
+    file2 = get_path("file2_nested.json")
+    expected = get_path("expected_nested.txt").read_text()
+
+    result = generate_diff(file1, file2)
+
+    assert result == expected
+
+
+def test_generate_diff_nested_yaml():
+    file1 = get_path("file1_nested.yml")
+    file2 = get_path("file2_nested.yml")
+    expected = get_path("expected_nested.txt").read_text()
+
+    result = generate_diff(file1, file2)
+
+    assert result == expected

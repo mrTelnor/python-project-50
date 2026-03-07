@@ -1,4 +1,4 @@
-### Hexlet tests and linter status:
+### Hexlet tests and linter status
 [![Actions Status](https://github.com/mrTelnor/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mrTelnor/python-project-50/actions)
 
 ### Test Coverage
@@ -8,34 +8,39 @@
 
 # gendiff
 
-**gendiff** — CLI-утилита и Python-библиотека для сравнения двух JSON и YAML файлов.  
-Показывает различия между конфигурационными файлами в удобном формате.
+**gendiff** — CLI-утилита и Python-библиотека для сравнения конфигурационных файлов  
+в форматах **JSON** и **YAML**.
 
-Проект выполнен в рамках обучения на Hexlet.
+Показывает различия между файлами в удобном человекочитаемом формате.
+
+Проект выполнен в рамках обучения на **Hexlet**.
 
 ---
 
 ## Demo
 
-[![asciicast](https://asciinema.org/a/ujZRDoTObLKZLRDF.svg)](https://asciinema.org/a/ujZRDoTObLKZLRDF)
+[![asciicast](https://asciinema.org/a/5a4pgApoYFIsjEcI.svg)](https://asciinema.org/a/5a4pgApoYFIsjEcI)
+
+---
 
 ## Возможности
 
-- Сравнение двух плоских JSON-файлов
+- Сравнение файлов **JSON** и **YAML**
+- Поддержка **вложенных структур**
 - Сортировка ключей в алфавитном порядке
 - Отображение:
   - удалённых ключей (`-`)
   - добавленных ключей (`+`)
   - изменённых значений
   - неизменённых значений
-- Возможность использования как CLI и как библиотеки
-- Иммутабельный функциональный подход (без классов)
+- Использование как **CLI-утилиты** и как **Python-библиотеки**
+- Функциональный подход (без классов)
 
 ---
 
 ## Установка
 
-Установка как CLI-инструмента:
+Установка CLI-инструмента:
 
 ```bash
 uv tool install .
