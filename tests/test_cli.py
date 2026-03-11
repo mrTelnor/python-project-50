@@ -1,5 +1,7 @@
 import sys
+
 import pytest
+
 from gendiff.scripts.gendiff import main
 
 
