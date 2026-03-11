@@ -22,3 +22,4 @@ Thumbs.db
 #SonarQloud
 .coverage
 coverage.xml
+htmlcov/
