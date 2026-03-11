@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status
 [![Actions Status](https://github.com/mrTelnor/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mrTelnor/python-project-50/actions)
+[![Python CI](https://github.com/mrTelnor/python-project-50/actions/workflows/python-ci.yml/badge.svg)](https://github.com/mrTelnor/python-project-50/actions/workflows/python-ci.yml)
 
 ### Test Coverage
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mrTelnor_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=mrTelnor_python-project-50)
@@ -14,9 +15,7 @@
 Показывает различия между файлами в удобном человекочитаемом формате и поддерживает несколько вариантов вывода:
 
 - **Stylish** — человекочитаемый, древовидный формат с отметками +, - и пробелами для неизменённых ключей.
-
 - **Plain** — текстовый формат для вывода изменений в виде описаний (Property 'a.b' was added/removed/updated).
-
 - **JSON** — машиночитаемый формат, который легко использовать в скриптах и системах автоматизации.
 
 Проект выполнен в рамках обучения на Hexlet.
@@ -55,6 +54,13 @@
 
 ---
 
+## Требования
+
+- Python >= 3.10
+- [uv](https://github.com/astral-sh/uv)
+
+---
+
 ## Установка
 
 Установка CLI-инструмента:
@@ -69,34 +75,60 @@ uv tool install .
 
 ## Использование
 
+## Использование
+
 **CLI**
 
 ```bash
 gendiff [-h] [-f {stylish,plain,json}] [-v] first_file second_file
 ```
 
- - first_file — путь к первому файлу для сравнения
- - second_file — путь ко второму файлу
- - -f, --format — формат вывода:
-     - stylish — человекочитаемый древовидный формат (по умолчанию)
-     - plain — текстовый формат с описанием изменений, например: Property 'a.b' was added/removed/updated
-     - json — машиночитаемый формат JSON
-     - -v, --version — показать версию утилиты
+- `first_file` — путь к первому файлу для сравнения
+- `second_file` — путь ко второму файлу
+- `-f`, `--format` — формат вывода:
+  - `stylish` — человекочитаемый древовидный формат (по умолчанию)
+  - `plain` — текстовый формат с описанием изменений
+  - `json` — машиночитаемый формат JSON
+- `-v`, `--version` — показать версию утилиты
 
 Примеры:
 
 ```bash
-gendiff file1.json file2.json          # вывод в формате stylish
+gendiff file1.json file2.json           # вывод в формате stylish
 gendiff file1.json file2.json -f plain
-gendiff file1.json file2.json --format json
-gendiff -v                             # показать версию
+gendiff file1.json file2.json -f json
+gendiff -v                              # показать версию
 ```
 
 **Python API**
 
-```Python
+```python
 from gendiff import generate_diff
 
-diff = generate_diff('file1.json', 'file2.json', format_name='plain')
+diff = generate_diff('file1.json', 'file2.json', format_name='stylish')
 print(diff)
+```
+
+Доступные значения `format_name`: `'stylish'` (по умолчанию), `'plain'`, `'json'`.
+
+---
+
+## Разработка
+
+Установка зависимостей:
+
+```bash
+make install
+```
+
+Запуск линтера и тестов:
+
+```bash
+make check
+```
+
+Запуск тестов с отчётом о покрытии:
+
+```bash
+uv run pytest --cov=gendiff --cov-report=term-missing
 ```
