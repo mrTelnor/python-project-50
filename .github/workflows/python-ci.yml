@@ -31,3 +31,4 @@ jobs:
             -Dsonar.organization=mrtelnor
             -Dsonar.python.coverage.reportPaths=coverage.xml
             -Dsonar.coverage.exclusions=tests/**
+            -Dsonar.python.version=3.12
