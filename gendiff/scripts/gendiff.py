@@ -24,7 +24,7 @@ def main():
         choices=['stylish', 'plain', 'json'],
         help='set format of output'
     )
-    
+
     parser.add_argument(
         '-v', '--version',
         action='version',

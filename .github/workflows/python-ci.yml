@@ -1,36 +1,28 @@
 name: Python CI
-
 on:
   push:
   pull_request:
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v6
-
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # нужно SonarCloud для корректного анализа истории
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: |
           pip install uv
           make install
-
-      - name: Run linter and tests
-        run: |
-          make check
-
-      - name: Run test coverage
-        run: |
-          make test-coverage
-
-      - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@v6
+      - name: Run linter
+        run: uv run ruff check .
+      - name: Run tests with coverage
+        run: uv run pytest --cov=gendiff --cov-report=xml
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
@@ -38,4 +30,3 @@ jobs:
             -Dsonar.projectKey=mrTelnor_python-project-50
             -Dsonar.organization=mrtelnor
             -Dsonar.python.coverage.reportPaths=coverage.xml
-
