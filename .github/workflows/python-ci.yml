@@ -30,5 +30,5 @@ jobs:
             -Dsonar.projectKey=mrTelnor_python-project-50
             -Dsonar.organization=mrtelnor
             -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.coverage.exclusions=tests/**
+            -Dsonar.coverage.exclusions=tests/**,**/gendiff.py
             -Dsonar.python.version=3.12
