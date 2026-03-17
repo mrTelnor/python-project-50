@@ -1,8 +1,8 @@
-### Hexlet tests and linter status
+## Status
 [![Actions Status](https://github.com/mrTelnor/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mrTelnor/python-project-50/actions)
+
 [![Python CI](https://github.com/mrTelnor/python-project-50/actions/workflows/python-ci.yml/badge.svg)](https://github.com/mrTelnor/python-project-50/actions/workflows/python-ci.yml)
 
-### Test Coverage
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=mrTelnor_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=mrTelnor_python-project-50)
 
 ---
