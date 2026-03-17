@@ -74,7 +74,8 @@ def test_cli_stylish(monkeypatch, capsys):
         str(get_path("file2.json")),
     ])
     main()
-    assert capsys.readouterr().out.strip() == get_path("expected_stylish.txt").read_text().strip()
+    expected = get_path("expected_stylish.txt").read_text().strip()
+    assert capsys.readouterr().out.strip() == expected
 
 
 def test_cli_plain(monkeypatch, capsys):
@@ -84,7 +85,8 @@ def test_cli_plain(monkeypatch, capsys):
         str(get_path("file2.json")),
     ])
     main()
-    assert capsys.readouterr().out.strip() == get_path("expected_plain.txt").read_text().strip()
+    expected = get_path("expected_plain.txt").read_text().strip()
+    assert capsys.readouterr().out.strip() == expected
 
 
 def test_cli_json(monkeypatch, capsys):
@@ -94,7 +96,8 @@ def test_cli_json(monkeypatch, capsys):
         str(get_path("file2.json")),
     ])
     main()
-    assert capsys.readouterr().out.strip() == get_path("expected_json.txt").read_text().strip()
+    expected = get_path("expected_json.txt").read_text().strip()
+    assert capsys.readouterr().out.strip() == expected
 
 
 def test_cli_version(monkeypatch):
