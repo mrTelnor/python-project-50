@@ -4,7 +4,7 @@ from importlib.metadata import PackageNotFoundError, version
 from gendiff import generate_diff
 
 try:
-    VERSION = version("gendiff")
+    VERSION = version("hexlet-code")
 except PackageNotFoundError:
     VERSION = "unknown"
 

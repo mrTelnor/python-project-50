@@ -70,31 +70,31 @@ def test_invalid_json(tmp_path):
 def test_cli_stylish(monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", [
         "gendiff",
-        "tests/test_data/file1.json",
-        "tests/test_data/file2.json",
+        str(get_path("file1.json")),
+        str(get_path("file2.json")),
     ])
     main()
-    assert "host" in capsys.readouterr().out
+    assert capsys.readouterr().out.strip() == get_path("expected_stylish.txt").read_text().strip()
 
 
 def test_cli_plain(monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", [
         "gendiff", "-f", "plain",
-        "tests/test_data/file1.json",
-        "tests/test_data/file2.json",
+        str(get_path("file1.json")),
+        str(get_path("file2.json")),
     ])
     main()
-    assert "Property" in capsys.readouterr().out
+    assert capsys.readouterr().out.strip() == get_path("expected_plain.txt").read_text().strip()
 
 
 def test_cli_json(monkeypatch, capsys):
     monkeypatch.setattr(sys, "argv", [
         "gendiff", "-f", "json",
-        "tests/test_data/file1.json",
-        "tests/test_data/file2.json",
+        str(get_path("file1.json")),
+        str(get_path("file2.json")),
     ])
     main()
-    assert capsys.readouterr().out.strip().startswith("[")
+    assert capsys.readouterr().out.strip() == get_path("expected_json.txt").read_text().strip()
 
 
 def test_cli_version(monkeypatch):

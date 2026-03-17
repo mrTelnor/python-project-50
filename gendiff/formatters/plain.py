@@ -7,10 +7,10 @@ def format_value(value):
         return "null"
     if isinstance(value, str):
         return f"'{value}'"
-    return value
+    return str(value)
 
 
-def format_plain(diff, path=""):
+def _collect_lines(diff, path=""):
     lines = []
 
     for node in diff:
@@ -33,6 +33,10 @@ def format_plain(diff, path=""):
             )
 
         elif status == "nested":
-            lines.extend(format_plain(node["children"], new_path).split("\n"))
+            lines.extend(_collect_lines(node["children"], new_path))
 
-    return "\n".join(lines)
+    return lines
+
+
+def format_plain(diff):
+    return "\n".join(_collect_lines(diff))

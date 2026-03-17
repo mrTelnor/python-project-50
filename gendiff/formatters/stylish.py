@@ -1,3 +1,7 @@
+INDENT_SIZE = 4
+PREFIX_WIDTH = 2  # место под "- " / "+ " / "  "
+
+
 def stringify(value, depth):
     if not isinstance(value, dict):
         if value is True:
@@ -8,7 +12,7 @@ def stringify(value, depth):
             return "null"
         return str(value)
 
-    indent = " " * (depth * 4)
+    indent = " " * (depth * INDENT_SIZE)
     lines = ["{"]
 
     for key, val in value.items():
@@ -16,7 +20,7 @@ def stringify(value, depth):
             f"{indent}{key}: {stringify(val, depth + 1)}"
         )
 
-    lines.append(" " * ((depth - 1) * 4) + "}")
+    lines.append(" " * ((depth - 1) * INDENT_SIZE) + "}")
 
     return "\n".join(lines)
 
@@ -25,7 +29,7 @@ def format_stylish(diff, depth=1):
     lines = ["{"]
 
     for node in diff:
-        indent = " " * (depth * 4 - 2)
+        indent = " " * (depth * INDENT_SIZE - PREFIX_WIDTH)
 
         key = node["key"]
         node_type = node["type"]
@@ -53,6 +57,6 @@ def format_stylish(diff, depth=1):
             lines.append(f"{indent}- {key}: {old_val}")
             lines.append(f"{indent}+ {key}: {new_val}")
 
-    lines.append(" " * (depth * 4 - 4) + "}")
+    lines.append(" " * ((depth - 1) * INDENT_SIZE) + "}")
 
     return "\n".join(lines)
